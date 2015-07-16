@@ -27,6 +27,7 @@
     return self;
 }
 
+#pragma mark -- 一般的Get和POST请求发送方法 --
 -(void)sendRequestWithBaseUrlStr:(NSString *)baseUrlStr andParamStr:(NSString *)paramStr andMethod:(NSString *)method
 {
     
@@ -46,27 +47,47 @@
     if ([method isEqualToString:@"GET"]) {
         [manager GET:[sendStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject)
          {
-             
-             
-         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-             
+             [self requestSucessWithOperation:operation andObject:responseObject];
+         }
+         failure:^(AFHTTPRequestOperation *operation, NSError *error)
+         {
+             [self requestFailedWithError:error];
          }];
     }
     else if ([method isEqualToString:@"POST"])
     {
         [manager POST:[sendStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] parameters:paramStr success:^(AFHTTPRequestOperation *operation, id responseObject)
         {
-            
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error)
+            [self requestSucessWithOperation:operation andObject:responseObject];
+        }
+        failure:^(AFHTTPRequestOperation *operation, NSError *error)
         {
-            
+            [self requestFailedWithError:error];
         }];
     }
-    
-    
-    
 }
 
+#pragma mark -- 请求回调成功 --
+-(void)requestSucessWithOperation:(AFHTTPRequestOperation *)operation andObject:(id)responseObject
+{
+    NSDictionary *dataDic = responseObject;
+    NSLog(@"dataDic = %@", dataDic);
+    if (self.delegate && [self.delegate respondsToSelector:@selector(APIManagerDidSucess:)]) {
+        self.delegate
+    }
+}
+
+#pragma mark -- 请求回调失败 --
+-(void)requestFailedWithError:(NSError *)error
+{
+    NSLog(@"Request error : %@", [error description]);
+}
+
+#pragma mark -- 拼接url --
+-(NSString *)makeRequestBaseUrl:(NSString *)actionId
+{
+    return [NSString stringWithFormat:@"%@sod?%@", APIURL, actionId];
+}
 
 @end
 
@@ -74,7 +95,7 @@
 
 -(void)getDataWithCategoryId:(NSString *)categoryId andLastUpdateTime:(NSString *)lastUpdateTime
 {
-    NSString *baseUrlStr = [NSString stringWithFormat:@"%@sod?%@", APIURL, @"action=1"];
+    NSString *baseUrlStr = [self makeRequestBaseUrl:@"action=1"];
     
     NSMutableDictionary *paramDic = [[NSMutableDictionary alloc] init];
     [paramDic setObject:categoryId forKey:@"categoryID"];
@@ -86,13 +107,12 @@
     
     paramStr = [NSString stringWithFormat:@"parameter=%@",paramStr];
     
-    [self sendRequestWithBaseUrlStr:baseUrlStr andParamStr:paramStr andMethod:@"POST"];
+    [self sendRequestWithBaseUrlStr:baseUrlStr andParamStr:paramStr andMethod:@"GET"];
 }
 
 -(NSString *)apiMethodName
 {
     return NSStringFromClass([self class]);
 }
-
 
 @end

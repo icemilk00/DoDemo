@@ -18,6 +18,8 @@
 
 @protocol APIManagerDelegate <NSObject>
 
+-(void)APIManagerDidSucess:(BaseAPIManager *)manager;
+-(void)APIManagerDidFailed:(BaseAPIManager *)manager;
 
 @end
 
@@ -25,7 +27,6 @@
 @interface BaseAPIManager : NSObject
 
 @property (nonatomic, weak) id <APIManager> child;
-
 @property (nonatomic, weak) id <APIManagerDelegate> delegate;
 
 @end
