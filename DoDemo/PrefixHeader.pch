@@ -16,5 +16,6 @@
 
 #import "JSONKit.h"
 #import "AFNetworking.h"
+#import "RequestManager.h"
 
 #endif

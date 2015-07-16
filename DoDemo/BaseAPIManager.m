@@ -42,23 +42,29 @@
         sendStr = baseUrlStr;
     }
     
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:[sendStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject)
+    RequestManager *manager = [RequestManager manager];
+    if ([method isEqualToString:@"GET"]) {
+        [manager GET:[sendStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject)
+         {
+             
+             
+         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+             
+         }];
+    }
+    else if ([method isEqualToString:@"POST"])
     {
-        NSLog(@"SUCESS : %@", [responseObject class]);
-        NSLog(@"response : %@", responseObject);
+        [manager POST:[sendStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] parameters:paramStr success:^(AFHTTPRequestOperation *operation, id responseObject)
+        {
+            
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error)
+        {
+            
+        }];
+    }
     
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"FAIL");
-    }];
     
-    [manager POST:sendStr parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-        
-    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-    }];
+    
 }
 
 
@@ -80,7 +86,7 @@
     
     paramStr = [NSString stringWithFormat:@"parameter=%@",paramStr];
     
-    [self sendRequestWithBaseUrlStr:baseUrlStr andParamStr:paramStr andMethod:@"GET"];
+    [self sendRequestWithBaseUrlStr:baseUrlStr andParamStr:paramStr andMethod:@"POST"];
 }
 
 -(NSString *)apiMethodName
