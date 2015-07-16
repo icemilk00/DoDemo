@@ -73,7 +73,7 @@
     NSDictionary *dataDic = responseObject;
     NSLog(@"dataDic = %@", dataDic);
     if (self.delegate && [self.delegate respondsToSelector:@selector(APIManagerDidSucess:)]) {
-        self.delegate
+        [self.delegate APIManagerDidSucess:self];
     }
 }
 
@@ -81,6 +81,9 @@
 -(void)requestFailedWithError:(NSError *)error
 {
     NSLog(@"Request error : %@", [error description]);
+    if (self.delegate && [self.delegate respondsToSelector:@selector(APIManagerDidFailed:)]) {
+        [self.delegate APIManagerDidFailed:self];
+    }
 }
 
 #pragma mark -- 拼接url --
