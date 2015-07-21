@@ -25,7 +25,7 @@
     
 }
 
-#pragma RiHanMaleSingersListAPIManager getter
+#pragma mark  RiHanMaleSingersListAPIManager getter
 -(RiHanMaleSingersListAPIManager *)riHanMaleSingersListAPIManager
 {
     if (!_riHanMaleSingersListAPIManager) {
@@ -33,6 +33,17 @@
         _riHanMaleSingersListAPIManager.delegate = self;
     }
     return _riHanMaleSingersListAPIManager;
+}
+
+#pragma mark -- APIManagerDelegate --
+-(void)APIManagerDidSucess:(BaseAPIManager *)manager
+{
+    
+}
+
+-(void)APIManagerDidFailed:(BaseAPIManager *)manager
+{
+    
 }
 
 - (void)didReceiveMemoryWarning {

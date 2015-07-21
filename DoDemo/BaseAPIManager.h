@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+@class BaseAPIManager;
+
+#pragma mark -- APIManager --
 @protocol APIManager <NSObject>
 
 @required
@@ -15,7 +18,7 @@
 
 @end
 
-
+#pragma mark -- APIManagerDelegate --
 @protocol APIManagerDelegate <NSObject>
 
 -(void)APIManagerDidSucess:(BaseAPIManager *)manager;
