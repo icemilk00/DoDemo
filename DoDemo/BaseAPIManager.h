@@ -32,6 +32,9 @@
 @property (nonatomic, weak) id <APIManager> child;
 @property (nonatomic, weak) id <APIManagerDelegate> delegate;
 
+@property (nonatomic, strong) NSDictionary *dataSourceDic;  //服务器返回的原始数据的字典
+@property (nonatomic, strong) NSString *retCode;            //服务器返回的retCode码
+
 @end
 
 #pragma mark -- 请求日韩男歌手的API --

@@ -70,8 +70,9 @@
 #pragma mark -- 请求回调成功 --
 -(void)requestSucessWithOperation:(AFHTTPRequestOperation *)operation andObject:(id)responseObject
 {
-    NSDictionary *dataDic = responseObject;
-    NSLog(@"dataDic = %@", dataDic);
+    self.dataSourceDic = [NSDictionary dictionaryWithDictionary:responseObject];
+    self.retCode = _dataSourceDic[@"retCode"];
+    NSLog(@"dataSourceDic = %@", _dataSourceDic);
     if (self.delegate && [self.delegate respondsToSelector:@selector(APIManagerDidSucess:)]) {
         [self.delegate APIManagerDidSucess:self];
     }

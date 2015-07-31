@@ -38,7 +38,7 @@
 #pragma mark -- APIManagerDelegate --
 -(void)APIManagerDidSucess:(BaseAPIManager *)manager
 {
-    
+    NSLog(@"retCode = %@", manager.retCode);
 }
 
 -(void)APIManagerDidFailed:(BaseAPIManager *)manager
