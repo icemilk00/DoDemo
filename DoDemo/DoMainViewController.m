@@ -38,12 +38,20 @@
 #pragma mark -- APIManagerDelegate --
 -(void)APIManagerDidSucess:(BaseAPIManager *)manager
 {
-    NSLog(@"retCode = %@", manager.retCode);
+
+    if(![manager.retCode isEqualToString:@"1000"])
+    {
+        NSLog(@"出现异常");
+        return;
+    }
+    
+    
+    
 }
 
 -(void)APIManagerDidFailed:(BaseAPIManager *)manager
 {
-    
+    NSLog(@"请求失败: %@", manager.requestError.description);
 }
 
 - (void)didReceiveMemoryWarning {

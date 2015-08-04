@@ -21,13 +21,18 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - JSONKit (1.5pre)
+  - Mantle (2.0.2):
+    - Mantle/extobjc (= 2.0.2)
+  - Mantle/extobjc (2.0.2)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5.4)
   - JSONKit (~> 1.5pre)
+  - Mantle (~> 2.0.2)
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   JSONKit: bae313ce6a6c444f40489a6c0b023f399888871f
+  Mantle: 967fd31ea0220890b2e76589198996b534bb3fb1
 
-COCOAPODS: 0.38.0.beta.2
+COCOAPODS: 0.38.2

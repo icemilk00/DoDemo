@@ -34,6 +34,7 @@
 
 @property (nonatomic, strong) NSDictionary *dataSourceDic;  //服务器返回的原始数据的字典
 @property (nonatomic, strong) NSString *retCode;            //服务器返回的retCode码
+@property (nonatomic, strong) NSError* requestError;       //请求失败的error
 
 @end
 

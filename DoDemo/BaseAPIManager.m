@@ -82,6 +82,7 @@
 -(void)requestFailedWithError:(NSError *)error
 {
     NSLog(@"Request error : %@", [error description]);
+    self.requestError = error;
     if (self.delegate && [self.delegate respondsToSelector:@selector(APIManagerDidFailed:)]) {
         [self.delegate APIManagerDidFailed:self];
     }

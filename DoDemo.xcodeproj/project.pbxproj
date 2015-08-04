@@ -13,6 +13,7 @@
 		E62E86A71B54B738006A2CD7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E62E86A61B54B738006A2CD7 /* Images.xcassets */; };
 		E62E86B61B54B738006A2CD7 /* DoDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E62E86B51B54B738006A2CD7 /* DoDemoTests.m */; };
 		E65B473A1B5EA06E00FD7CDC /* DataReformer.m in Sources */ = {isa = PBXBuildFile; fileRef = E65B47391B5EA06E00FD7CDC /* DataReformer.m */; };
+		E68772D71B7097FB00709118 /* SingerInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E68772D61B7097FB00709118 /* SingerInfoModel.m */; };
 		E69CDFFE1B574A040039B900 /* RequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E69CDFFD1B574A040039B900 /* RequestManager.m */; };
 		E6B7C6A91B54E73D0083882D /* DoMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B7C6A81B54E73D0083882D /* DoMainViewController.m */; };
 		E6B7C6AD1B54E91D0083882D /* BaseAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B7C6AC1B54E91D0083882D /* BaseAPIManager.m */; };
@@ -44,6 +45,8 @@
 		E62E86B51B54B738006A2CD7 /* DoDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DoDemoTests.m; sourceTree = "<group>"; };
 		E65B47381B5EA06E00FD7CDC /* DataReformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataReformer.h; sourceTree = "<group>"; };
 		E65B47391B5EA06E00FD7CDC /* DataReformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataReformer.m; sourceTree = "<group>"; };
+		E68772D51B7097FB00709118 /* SingerInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingerInfoModel.h; sourceTree = "<group>"; };
+		E68772D61B7097FB00709118 /* SingerInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingerInfoModel.m; sourceTree = "<group>"; };
 		E69CDFFC1B574A040039B900 /* RequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestManager.h; sourceTree = "<group>"; };
 		E69CDFFD1B574A040039B900 /* RequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestManager.m; sourceTree = "<group>"; };
 		E6B7C6A71B54E73D0083882D /* DoMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoMainViewController.h; sourceTree = "<group>"; };
@@ -107,6 +110,8 @@
 				E62E869E1B54B738006A2CD7 /* AppDelegate.m */,
 				E6B7C6A71B54E73D0083882D /* DoMainViewController.h */,
 				E6B7C6A81B54E73D0083882D /* DoMainViewController.m */,
+				E68772D51B7097FB00709118 /* SingerInfoModel.h */,
+				E68772D61B7097FB00709118 /* SingerInfoModel.m */,
 				E69CDFFB1B5749E10039B900 /* RequestManager */,
 				E6B7C6AA1B54E9030083882D /* APIManager */,
 				E65B47371B5EA04300FD7CDC /* DataReformer */,
@@ -319,6 +324,7 @@
 				E65B473A1B5EA06E00FD7CDC /* DataReformer.m in Sources */,
 				E62E869C1B54B738006A2CD7 /* main.m in Sources */,
 				E6B7C6AD1B54E91D0083882D /* BaseAPIManager.m in Sources */,
+				E68772D71B7097FB00709118 /* SingerInfoModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
